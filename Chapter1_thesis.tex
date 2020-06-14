@@ -1,0 +1,67 @@
+\chapter{Introduction}\label{ch:Intro}
+
+\section{Background}\label{sec:Background} 
+In order to define the issue of ``classification imbalance'' it may be helpful to firstly describe what the break up of various classes within a dataset need to be in order for that dataset to be considered ``imbalanced'' and then to describe some real world examples of problems that exhibit such an imbalance. The title of this paper refers to ``accuracy'' or more precisely predictive accuracy and within a reasonably balanced dataset this would be a good measure. However, in an imbalanced situation it is more usual to see an ROC curve or something similar used to rate whether the classification has been ``accurate'' (Ling \& Li, 1998~\cite{ling1998data}; Drummond \& Holte, 2000~\cite{drummond2000explicitly} Provost \& Fawcett, 2001~\cite{provost2001robust}; Bradley 1997~\cite{bradley1997use}).  
+\par
+Describing class break up, He and Garcia (2008~\cite{he2008learning}) refer to the ideal situation where a classifier would be split evenly within any given domain problem. However, such a situation is rare and more often than not we find a disproportionately skewed set of classifiers. Their work suggests that an imbalanced problem would have a percentage range from a (majority~/~minority) class split of anywhere between (90\%~/~10\%) and (\textgreater=99\%~/~\textless=1\%). In fact, the research community as a whole regularly sees class imbalances of 100:1, 1000:1 and 10000:1. 
+\par
+When it comes to real world examples of class imbalance, fraud detection in the use of credit cards is a classic example where the percentage of fraudulent usage is a tiny fraction of a percent compared to its honest counterpart. Another example of an imbalance scenario is from the theft of electricity worldwide. It is suggested that this form of theft rates in the top five forms of theft globally. Utility companies are faced with a situation where less than 2\% of usage classification is fraudulent, yet it represents a very sizeable dent in their profit.
+\par
+\secref{ch:LSurvey} contains an extensive literature review, the aim of which is to critique an exhaustive collection of deep learning methods that address the issue of class imbalance. The approach taken is based on the guidelines suggested by Kitchenham \& Charters (2010~\cite{Kitchenham2010}), a preliminary SLR approach was used to address the research questions at hand.
+\par
+Within the UTS online library the following electronic scientific databases were chosen to reveal the literature required for this review:
+
+\begin{itemize}
+    \item Computers \& Applied Sciences Complete(EBSCO) (\href{https://www.ebsco.com/}{https://www.ebsco.com/})
+    \item Google Scholar (\href{https://www.scholar.google.com.au/}{https://www.scholar.google.com.au/})
+	\item IEEE Xplore (\href{https://www.ieexplore.ieee.org/Xplore/}{https://www.ieexplore.ieee.org/Xplore/})
+    \item ProQuest Science and Technology (\href{https://www.proquest.com/}{https://www.proquest.com/})
+    \item Science Direct (Elsevier) (\href{https://www.sciencedirect.com/}{https://www.sciencedirect.com/})
+    \item Scopus (Elsevier) (\href{https://www.scopus.com}{https://www.scopus.com})
+    \item SpringerLink (\href{https://link.springer.com/}{https://link.springer.com/})
+\end{itemize}
+
+The search strings used to find out the relevant literature were "class imbalance", "deep learning", "neural networks", "deep neural networks", "class rarity", "class minority" and "skewed data". 
+
+From this list certain papers were removed based upon the following criteria:
+
+\begin{itemize}
+    \item Look at only low levels of imbalance
+    \item Only have a single dataset for evaluation as this is considered too niche
+    \item Imbalance is not the primary goal of the research 
+\end{itemize}
+
+\section{Research Objectives}\label{sec:RObj} 
+
+The aims of the project are to:
+\renewcommand{\theenumi}{\roman{enumi}}
+\begin{enumerate}
+\item review traditional machine learning techniques to handle class imbalance. 
+\item review deep learning techniques to handle class imbalance. 
+\item make a list of public datasets showing correlation to our industry dataset. 
+\item apply review findings to these public non image datasets. 
+\item apply review findings to existing industry dataset. 
+\end{enumerate}
+
+\section{Thesis Organization}\label{sec:ThOrg} 
+This thesis is organised as follows:
+
+\begin{itemize}
+\item {\it Chapter 2}: This chapter presents a literature review of the current research into classification imbalance in both a traditional and deep learning manner
+
+%\item {\it Chapter 3}: ... are derived in this chapter.
+
+%\item {\it Chapter 4}: This chapter presents ...
+
+%\item {\it Chapter 5}: A brief summary of the thesis contents and its contributions are given in the final chapter. Recommendation for future works is given as well.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+

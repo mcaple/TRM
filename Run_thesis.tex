@@ -1,0 +1,205 @@
+%Created: 01/03/2016, Modified: 22/02/2017
+%Sayed Royel; E: sayed.royel@gmail.com; sayed.royel@uts.edu.au|M: +61 4 3141 2691
+%PhD Student|Teaching Assistant, SEMMS, FEIT​|URL: http://www.uts.edu.au/staff/sayed.royel
+
+% https://nuanceabounds.org/fix-latex-package-option-clash-error-passoptionstopackage/
+\PassOptionsToPackage{table, xcdraw}{xcolor}
+
+\documentclass{ruthesis}
+% https://tex.stackexchange.com/questions/130795/how-can-i-number-sections-below-subsection-in-latex#130797
+\setcounter{secnumdepth}{4}
+
+\usepackage{graphicx}          % Include this line if your
+                               % document contains figures,
+%\usepackage[dvips]{epsfig}    % or this line, depending on which
+                               % you prefer.
+\usepackage{amsfonts,amssymb,amsbsy}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{afterpage}
+\usepackage{array,booktabs,enumitem}% http://ctan.org/pkg/
+\newcolumntype{P}[1]{>{\endgraf\vspace*{-\baselineskip}}p{#1}}
+%\usepackage{graphicx,subfigure}
+%\usepackage{rotating}
+%\usepackage{theorem}
+%%\usepackage{isomath}
+%\usepackage{mathrsfs}
+%\usepackage{enumerate}
+
+% Added by me after starting with template
+%\usepackage{url, lipsum}
+% \usepackage{cite}
+% \usepackage{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
+
+% For accented characters https://en.wikibooks.org/wiki/LaTeX/Special_Characters
+% \usepackage[utf8]{inputenc}
+
+
+%% commented all the following out to stop an xcolor already loaded error
+%%\usepackage{amsmath}
+%%\usepackage{tikz}
+%%\usepackage{mathdots}
+%%\usepackage{yhmath}
+%%\usepackage{cancel}
+%%\usepackage{color}
+%%\usepackage{siunitx}
+%%\usepackage{array}
+%%\usepackage{multirow}
+%%\usepackage{amssymb}
+%%\usepackage{gensymb}
+%%\usepackage{tabularx}
+%%\usepackage{booktabs}
+%%\usetikzlibrary{fadings}
+
+%\usepackage[dvipsnames]{xcolor}
+%\usepackage{pgfplots}
+
+%\documentclass{article}
+\usepackage[margin=0in,paperheight=3.9in,paperwidth=6.3in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{width=30cm,compat=1.9}
+\usetikzlibrary{patterns}
+
+% wrapping text in tables
+% https://stackoverflow.com/questions/790932/how-to-wrap-text-in-latex-tables#790944
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+
+
+% for tbl_research_design...
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage{titlesec}
+% https://tex.stackexchange.com/questions/291932/italicize-the-subsubsection-in-latex#291937
+\titleformat{\section}{\bfseries\Large}{\thesection.}{0.5em}{}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\normalsize}
+%\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
+
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm}, left=20mm, right=20mm, top=20mm, bottom=20mm,}
+ 
+% One must be careful when importing hyperref. Usually, it has to be the last package to be imported, but there might be some exceptions to this rule. 
+\usepackage{hyperref}
+
+% The following is used to prefix our autoref chapter and section names
+% https://tex.stackexchange.com/questions/137432/whats-the-difference-between-ref-and-autoref/137435
+\def\sectionautorefname{Section}
+\def\chapterautorefname{Chapter}
+
+% https://stackoverflow.com/questions/1491842/references-with-text-in-latex
+\newcommand{\secref}[1]{``\autoref{#1}.~\nameref{#1}''}
+
+% The default formatting for links can be changed so the information in your documents is more clearly presented. 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue
+}
+\urlstyle{same}
+ 
+% \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+ 
+ 
+\def\etal{\mbox{et al.}}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\proj}{proj}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\rank}{rank}
+\newcommand{\norm}[1]{{{\lVert #1 \rVert}}}
+\newcommand{\clN}{{\cal N}}
+\newcommand{\clM}{{\cal M}}
+%\newcommand{\diag}{{\sf diag}}
+%\newcommand{\sgn}{{\sf sgn}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+
+\title{Association Rule Mining and Decision Making for Closed-Ended Hierarchical Questionnaire Data}
+\ctitle{Thesis Title}
+
+\author{Mark Caple}
+\school{University of Technology, Sydney} 
+\department{Faculty of Engineering and Information Technology} 
+\degree{Masters by Research}
+
+\address{Sydney, Australia}
+\donemonth{December} \doneyear{2020} \makeindex
+
+\setlength{\parskip}{0.2cm} 
+\setlength{\topmargin}{-0.4cm}
+\setlength{\oddsidemargin}{1cm} 
+\setlength\evensidemargin{1cm}
+\setlength{\textwidth}{15cm} 
+\setlength{\textheight}{23.5cm}
+\titlespacing\section{-4pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titleformat{\subsubsection}
+  {\bfseries\itshape\normalsize}{\thesubsubsection}{1em}{}
+  
+\begin{document}
+
+\begin{frontmatter}
+  \pagenumbering{roman}
+  \maketitle
+
+  %%\include{WorkshopCover}
+
+  %%%\include{Certificate_thesis}
+  %%%\include{Abstract_thesis}
+  %\include{Dedication_thesis}
+  %%%\include{Acknowledge_thesis}
+  %\include{Publication_thesis}
+  \tableofcontents
+  %%%\listoffigures
+  %%%\listoftables 
+  %\include{notation}
+  %%%\include{Abbreviation_thesis} 
+  \include{Abbreviation_trm}
+  %\include{Notation_thesis} 
+\end{frontmatter}
+
+\pagenumbering{arabic}
+\linespacing{1.7}
+
+% \input{Review_structure.tex}
+
+\include{Chapter1_dissertation}
+%%%\include{Chapter1_thesis}
+%%%\include{Chapter2_thesis}
+%\include{Chapter3_thesis}
+%\include{Chapter4_thesis}
+%\include{Chapter5_thesis}
+
+\bibliographystyle{IEEEtranS}  %Include this line for referencing
+%\bibliographystyle{JHEPsort}
+%\bibliographystyle{Classes/CUEDbiblio}
+%\raggedright
+%%%\bibliography{Reference_thesis}  %and %Include this line
+%%%\bibliography{Reference_thesis, Reference_trm}  %and %Include this line
+\bibliography{Reference_trm}  %and %Include this line
+
+%OR following style can be used: uncomment the below section
+%\begin{thebibliography}{10} %comment this line if you want to 
+%\bibitem{Slotine_1991} J. J. E. Slotine and W. Li, \emph{Applied Nonlinear Control}, %Prentice-Hall, Englewood Cliffs, New Jersey, 1991.
+%\end{thebibliography}
+
+\end{document}

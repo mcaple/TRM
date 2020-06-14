@@ -1,0 +1,63 @@
+%%%Introduction and background
+
+%%%\textbf{So what?}
+
+%%Probably the most important question of all, and one we will return to is “so what?”Why is studying the thing you wish to study of any importance?So what if no one can control EIT using RF fields? What do we lose?The answer could be nothing at all, and to some extent that is OK, but ultimately your readers, or funders, will wonder the same thing.A key component to developing a sensible proposal is offering an appropriate motivation.
+
+%Write about why assessment questionnaire exists, background about the industry etc etc
+
+%\textbf{The introduction needs to offer a summary of the literature review, or broader research area, putting your work in context and demonstrating that there is novelty in your approach or study.}
+
+%\begin{itemize}
+%    \item Thesis Statement
+%    \item Background and Novelty
+%    \item Readers/Stakeholders, your objectives, deliverables, significance
+%    \item Research Methods and Approaches
+%    \item Summary of what you are about to read
+%\end{itemize}
+
+
+Since humans began to communicate they have asked questions about a multitude of diverse topics. Indeed studies show that children can ask tens to hundreds of questions of their parents per day. These questions would probably have a constantly changing theme dependant upon what was puzzling them at the time.
+
+There are however many times when a theme would be beneficial when wanting to draw some sort of conclusion to answers given. Local councils may ask a series of questions to gauge public appetite for new works that they plan to introduce or a company may check their clients acceptance of staged branch closures before they happen.
+
+When such scenarios arise the humble questionnaire is front and centre as a means to gather information. The questionnaire, although common place today, has a history of less than 200 years. It's origins have been attributed to the Statistical Society of London in 1838 (Gault, 1979~\cite{gault1907history}) whose main goal was "procuring, arranging and publishing facts to illustrate the condition and prospects of society".
+
+Distilling information from the answers given to these questionnaire's has been a goal of machine learning for quite some time and much research has covered various approaches. It is important however before mentioning the machine learning work to categorise the individual questions of a questionnaire into two broad types being either closed-ended or open-ended (Marshall, 2005~\cite{marshall2005purpose}). A closed-ended question would have one correct answer or a limited number of options. An open-ended question on the other hand would not have a correct answer but rather would allow the participant to enter exactly what they believed appropriate. Open-ended can be considered to promote long responses whereas closed-ended short responses. 
+
+So when discussing machine learning research, open-ended questionnaires allow the participant to use free or open text to answer the question and typically the research then incorporates the use of techniques such as Natural Language Processing to infer a conclusion. Closed-ended (Howard \& Presser, 1979~\cite{10.2307/2094521}) questionnaires on the other hand allow participants to answer a series of questions using multiple short answer types. Marshall (2005~\cite{marshall2005purpose}) defines five data types:
+
+\begin{itemize}
+    \item category - represents a set of mutually exclusive categories (e.g male, female)
+    \item list - multiple category choice is possible as the answers are not exclusive, e.g "what services have you used from your GP in the last year?". 
+    \item quantity/numeric - such as "how many times have you broken your leg?"
+    \item ranking/scale - such as "how would you rate your doctor [1-7]"
+    \item linguistic ranking/scale - such as "would you describe yourself as: very tall, tall,short,very short?"
+\end{itemize}
+
+The research community is not so united in their approach when it comes to closed-ended questionnaire data with no clear technique winning out over another. One of the characteristics of a closed-ended questionnaire that adds to its complexity is the fact that it is able to contain so many different types of answer.
+
+One approach that has been considered worthy of handling questionnaire responses is Association Rule Mining (ARM). Agrawal et al. (1993,  \cite{agrawal1993mining}) represents a seminal piece of research in the field defining not only the problem but also the mechanism to handle it. The mechanism involves an easily understood procedure wherein frequent itemsets are included that obey some minimum support and then association rules are created that satisfy some minimum confidence. 
+
+ARM has been adopted widely to determine the purchasing habits of consumers but over time it has been applied to a diverse problem landscape including product recommendation, web page caching mechanisms, medical diagnosis, census data analysis and protein sequencing.
+
+My literature review has identified that there has to date been very little research that is able to mine association rules from closed-ended questionnaire data. The approaches that have been adopted have predominantly used crisp or boolean values where a section of the questionnaire is analysed in isolation as the data is of the same data type. For the approach of this research all of the five data types mentioned by Marshal (2005~\cite{marshall2005purpose}) should be handled together and also the possibility of multi-value answers needs to be addressed. Chen et al. (2009~\cite{chen2009mining}) was the first to use fuzzy association rules on questionnaire data and in so doing was able to handle all of the data types simultaneously. They achieved this through no longer considering answers as true/false but as partial truths thus any answer that is of a linguistic type can considered alongside a non fuzzy type. Although the research had some success the authors do concede some shortcomings in the approach. The first being the use of static membership functions that are defined ahead of time that create roadblocks in the process.This work will consider a dynamic membership function which will derive the function from the data. Another being a mechanism for analysing associations between questionnaire's over time. 
+
+One further research direction that to the best of my knowledge has not previously been investigated in the context of a questionnaire, is to take the fuzzy association rules produced and apply some neural network algorithms to improve the findings. Mamuda et al. (2017~\cite{mamuda2017fusion}) show that it is possible to tune the parameters of fuzzy rules using traditional gradient descent. The added advantage of this was that it "allowed a membership function of the rule to be used more than one time in the fuzzy rule base". 
+
+
+Our university industry partner has a core service that is pre-employment assessments. Currently they offer third party organisations an efficient means to bring candidates on-board which can involve interview(s), medical questionnaires and medical assessments. It is the intention of this research that through adopting association rule mining on those medical questionnaires and fine tuning with machine learning techniques the number of actual medical reviews and time to selection would be reduced. 
+
+\par
+\noindent
+Thesis statement should come at the end of this
+
+A Thesis Statement is“A statement or theory that is put forward as a premise to be maintained or proved.”
+
+
+
+
+%%% use the following question phrasing for my plan
+%@J8 - I can't find any example of incompetence of MM's level in the industry I worked. MM never puts a target date or expected date of completion for any of business goals. take Covid-19 testing as an example. what do we know about this activity? Yes there was an announcement that they will start testing. do we know when they will start? how many tests? how many compounds? any estimate on how long will testing take? when preliminary results will be available? how much will it cost? so on and so forth....
+
+%Structuring a Research Question1. Topic:I am trying to learn about/working on/studying _____________2. Question: because I want to find out who/what/when/where/whether/why/how ___________3. Significance: in order to help my ‘reader’ understand ___________I am trying to study RF control of EITbecause I want to find out whether low-power compact experiments can be builtin order to help my reader understand their utility as components of future quantum control experiments.

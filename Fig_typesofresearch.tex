@@ -1,13 +1,7 @@
-%https://tex.stackexchange.com/questions/238636/add-caption-to-image-included-with-includegraphics-within-center-environment
-\documentclass{article}
-\usepackage[demo]{graphicx} % Required for including images
-\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
-\begin{document}
-\begin{center}
-\begin{minipage}{1\linewidth}
-\includegraphics[width=\linewidth]{fig/TypesOfResearch.pdf}
-\captionof{figure}{Types of research}
-\end{minipage}%
-\hfill
-\end{center}
-\end{document}
+\begin{figure}[!htb]
+    \caption{Classic v Design-Science Research within Information Systems}
+    \includegraphics[width=0.9\columnwidth]{fig/TypesOfResearch.pdf}
+    \label{fig:typesofresearch}
+\end{figure}
+% https://tex.stackexchange.com/questions/64836/change-image-size#64843
+%\includegraphics[width=0.9\columnwidth]{TypesOfResearch.pdf}

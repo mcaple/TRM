@@ -6,6 +6,7 @@
 \PassOptionsToPackage{table, xcdraw}{xcolor}
 
 \documentclass{ruthesis}
+%\documentclass{IEEEtran}
 % https://tex.stackexchange.com/questions/130795/how-can-i-number-sections-below-subsection-in-latex#130797
 \setcounter{secnumdepth}{4}
 
@@ -36,7 +37,7 @@
 % Added by me after starting with template
 %\usepackage{url, lipsum}
 % \usepackage{cite}
-% \usepackage{natbib}
+%\usepackage{natbib}
 \usepackage[square,sort,comma,numbers]{natbib}
 
 % For accented characters https://en.wikibooks.org/wiki/LaTeX/Special_Characters
@@ -189,13 +190,17 @@
 %\include{Chapter4_thesis}
 %\include{Chapter5_thesis}
 
+%\bibstyle{ajl}
 \bibliographystyle{IEEEtranS}  %Include this line for referencing
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{abbrv}  %Include this line for referencing
 %\bibliographystyle{JHEPsort}
 %\bibliographystyle{Classes/CUEDbiblio}
 %\raggedright
 %%%\bibliography{Reference_thesis}  %and %Include this line
-%%%\bibliography{Reference_thesis, Reference_trm}  %and %Include this line
+%\bibliography{Reference_thesis, Reference_trm}  %and %Include this line
 \bibliography{Reference_trm}  %and %Include this line
+%\bibliography{Reference_bib}
 
 %OR following style can be used: uncomment the below section
 %\begin{thebibliography}{10} %comment this line if you want to 

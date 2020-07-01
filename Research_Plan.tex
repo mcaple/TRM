@@ -1,4 +1,4 @@
-The research plan of this study will follow the work of Peffers et al. described in Section \ref{sec:disMethodology}.
+The research plan of this study will follow the work of Peffers et al. described in Section \ref{sec:disMethodology}. Each required step of Peffers et al. will be considered in its own section and how that step applies to the current research will be discussed.
 
 \subsection{Identify, define, and motivate the focal problem}
 
@@ -24,11 +24,15 @@ and any typical risks or needs that are associated with that role.
 
 \subsection{Design and develop the artefact}
 
+Before detailing the artefacts to be developed that correspond to the objectives of this work it would be prudent to give an overview of the proposed system.
+
+\subsubsection{System Overview}
+
 Being able to definitively label a role or job title is critical to the operation of any system being developed.
 For instance a bus driver could also be referred to as a bus operator or omnibus driver and so a standard convention
 is required. This convention within Australia and New Zealand is the Australian and New Zealand Standard Classification
-of Occupations (ANZSCO). This ANZSCO standard will form the bridge between the description of a role given by
-a third party and the definition of the role within the system. This bridge is described in Figure~\ref{fig:anzcoriskprofile}.
+of Occupations (ANZSCO). This ANZSCO standard will form the "bridge" between the description of a role given by
+a third party and the definition of the role within the system. This "bridge" is described in Figure~\ref{fig:anzcoriskprofile}.
 Within the bridge exists an ANZSCO semantic search which represents another research opportunity currently being written
 within the university. The bridge also contains multiple "risk profile templates" which represent a predefined "risk profile"
 enabling third party's to have a building block for their specific role.
@@ -64,6 +68,23 @@ possible which will allow for a human to override a decision on the candidate wh
 to use some form of transfer or cluster learning would remove the need to train all roles separately but the initial
 design will not cater for this scenario.
 
+\subsubsection{Objective 1. To classify a candidate into a small number of groups that give a sliding suitability score.}
+
+This objective corresponds to research question 1. To the best of my knowledge, through my literature review, no research exists that addresses the classification of closed-ended medical questionnaire's using fuzzy association rule mining. Furthermore, my literature review shows that no work has taken the predicted rule parameters from such mining and applied neural networks to fine tune the results.
+
+\subsubsection{Objective 2. To define a mechanism whereby results of physical medical assessments are fed back into the system for a better predictor.}
+
+This objective corresponds to research question 2. The physical medical assessment is outside the core architectural boundaries of the current system. There are many factors to this including geographic remoteness or the use of third party independent assessors. In order for any selected candidate to be both accurately determined and done so in a timely fashion it is vitally important that results of physical assessments are fed back into the system promptly. In fulfilling this the research will not only complete a design criteria but will also help to fill another literature gap. Chen et al. (2009~\cite{chen2009mining}) concluded that their design proved to be slow as the fuzzy membership routines were static. In feeding back this assessment information into the system the research will use the data to deduce dynamic membership routines.
+
+
+\subsubsection{Objective 3. To build an anomaly detection routine to predict a list of candidates of concern.}
+
+This objective corresponds to research question 3. The literature review has demonstrated very little research that has catered for questionnaire responses to all of Marshall's (2005~\cite{marshall2005purpose}) five data types. The main objective of this research is to use fuzzy association rule mining to improve on this situation. This objective however will endeavour to apply a number of the state of the art algorithms used in machine learning to discover rare conditions within the candidates. In completing this objective the very small pool of anomaly detection that has been applied to closed-ended questionnaire data will be enhanced. Once these anomalies are detected the research will verify if removal of such candidates leads to a better predictor of the system as a whole.
+
+\subsubsection{Objective 4. To build a model whereby assessments maybe compared along a timeline so that assessments taken multiple times maybe analysed.}
+
+This objective corresponds to research question 4. Chen et al. (2009~\cite{chen2009mining}) had demonstrated the inability of their research to analyse associations between questionnaire's over time. By addressing this gap this research will also benefit the industry partner's goal of comparing candidate's assessments over time. This will answer a broader question of whether a given candidate may prove unsuitable for any role or simply an individual role. One further goal of the industry partner is to allow unsuccessful candidates to be given suggestions of possible alternate rolls that they would be suitable for. This objective goes a long way to achieving this goal.
+
 
 \subsection{Demonstrate the artefact can be used to help solve the focal problem}
 
@@ -81,7 +102,56 @@ will be the ability to suggest alternate candidate roles to an unsuccessful cand
 \subsection{Evaluate how well the artefact solves the focal problem}
 
 Objective 5 of Section~\ref{sec:disObjectives} discusses evaluation of the developed artefacts and in so doing satisfies
-this requirement of Peffers et al. described in Section \ref{sec:disMethodology}.
+this requirement of Peffers et al. described in the Methodology Section \ref{sec:disMethodology}.
+
+\subsubsection{Objective 5. To evaluate the developed artefacts from the previous objectives.}
+
+This objective corresponds to research question 5. For our classification objective there are a number of typical tests to indicate the correctness of a classification and these include amongst other measures confusion matrix, area under the ROC curve and F1 score.
+
+%Evaluation should state what success looks like, for instance, objective 1 may be successful if we can flag 60\% of candidates of concern. Or our prototype should show improved learning through assessor feedback.
+
+% https://towardsdatascience.com/how-to-measure-the-goodness-of-a-regression-model-60c7f87614ce
+%https://medium.com/analytics-vidhya/evaluation-metrics-in-machine-learning-models-using-python-fb6199450fba
+% https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9
+
+
+Briefly if we are describing a binary classification such as the candidate is "suitable" or "not suitable" we can plot a confusion matrix of the form shown in Fig~\ref{fig:ConfusionMatrix}. From this matrix we can calculate attributes such as accuracy, precision and recall to decide whether our results have been noteworthy. The reader may at this point believe that to be noteworthy we should simply strive for the highest accuracy in our classification but that may not always be the case. For instance we may gain an accuracy of over 98\% but if we ultimately select a candidate who would have been rejected if given a physical assessment then this could present an unforeseen cost to the client and also a loss of faith in the predictor. This then brings us to the other two attributes precision and recall which represent the ratio of true positives in the model to the predicted positives and actual positives respectively. Precision should be closely watched when the cost of a false positive is high and recall when the cost of a false negative is high.
+
+Initially all of our candidates will have a medical assessment and so the cost of a false positive will not truly be of concern. That does not however mean that our success of a classification for this research should only look at accuracy as eventually the medical assessor should not need to be called upon for every situation. It does however offer some flexibility in deciding the success criteria at this stage of the research.
+
+\begin{figure}[h]
+    \caption{Confusion matrix} \label{fig:ConfusionMatrix}
+    \begin{tabular}{|l|l|l|}
+        \hline
+                                          & \textbf{Suitable (Actual)} & \textbf{Not Suitable (Actual)} \\ \hline
+        \textbf{Suitable (Predicted)}     & TP (True Positive)         & FP (False Positive)            \\ \hline
+        \textbf{Not Suitable (Predicted)} & FN (False Negative)        & TN (True Negative)             \\ \hline
+    \end{tabular}
+
+    % https://www.latex-tutorial.com/tutorials/amsmath/
+    \begin{align*}
+        accuracy  & = \frac{(TP+TN)}{(TP+TN+FP+FN)} \\
+        precision & = \frac{TP}{(TP+FP)}            \\
+        recall    & = \frac{TP}{(TP+FN)}            \\
+    \end{align*}
+
+\end{figure}
+
+
+% https://www.displayr.com/what-is-a-roc-curve-how-to-interpret-it/
+\noindent
+Fawcett (2006~\cite{fawcett2006introduction}) explains the intricacies of an ROC graph, an example of which, is shown in Fig~\ref{fig:ROCCurve}. It is a very visual means by which the correctness of a classifier can be judged by varying the threshold. The threshold being a value between 0\% and 100\%, that is used to set the limit to decide upon which class an instance belongs to. In our case, we will classify a candidate as either "suitable" or "not suitable". The graph plots the true positive rate against the false positive rate. For us the true positive rate is the rate in which candidates are correctly identified as "suitable" for the job role in question. A classifier that approaches the top left of the graph is considered a better classifier than one further away. The closer the curve comes to the "random" 45 degree line the less accurate the classifier and this would equate to using a "coin toss" to decide upon the candidates suitability. Although an ROC graph is a very visual tool, to evaluate multiple classifiers the approach used is to take the area under the ROC curve (AUC). Generally, although not always true, a high AUC score is a better predictor than one that is lower. One advantage that an ROC graph has over a confusion matrix is that it does not depend on class distribution and hence is still suitable for evaluating classifiers that contain rare or anomalous values.
+
+\input{Chart_ROC}
+
+The final success indicator that we will employ is the F1 score. This score is based on the precision and recall values mentioned in Fig~\ref{fig:ConfusionMatrix}
+
+\begin{align*}
+    F1 & = 2 * \frac{Precision*Recall}{Precision+Recall} \\
+\end{align*}
+
+It is used when a balance is required between precision and recall. The reason for the F1 score over using straight accuracy is that accuracy is affected highly by true negatives which are not often a focus in business problems. False negatives and positives usually claim the majority of the focus as they are responsible for most of the cost involved in incorrect classification. Thus the F1 score seeks to find balance between precision and recall when there is an uneven class distribution.
+
 
 \subsection{Communicate the outcomes of the research}
 

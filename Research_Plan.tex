@@ -72,22 +72,31 @@ design will not cater for this scenario.
 
 This objective corresponds to research question 1. To the best of my knowledge, through my literature review, no research exists that addresses the classification of closed-ended medical questionnaire's using fuzzy association rule mining. Furthermore, my literature review shows that no work has taken the predicted rule parameters from such mining and applied neural networks to fine tune the results.
 
-Fuzzy classification can be considered as two distinct major steps
+\noindent
+Fuzzy classification can be considered as two distinct major steps:
 
-Step 1: Create our distinct linguistic definitions to be able to describe a given domain feature in a fuzzy or non crisp manner.
+\noindent
+\textbf{Step 1}: Create our distinct linguistic definitions to be able to describe a given domain feature in a fuzzy or non crisp manner.
 
-Step 2: Select the most noteworthy classification rules using these linguistic definitions. This step needs to include a mechanism for handling exponential growth in noteworthy rules as the features in a domain increase.
+In this step we introduce similarity matrix which allow us to compare two linguistic terms in a fuzzy manner. For instance suppose we had a health ranking feature (Table~\ref{tab:SimilarityMatrix}) By using this table we could say that a health ranking value of \textit{Very Poor} had a similarity of 0.5 when compared to \textit{Poor}.
 
-The selection process involves finding rules that satisfy a minimum support and confidence value.
+\input{Table/Tbl_similarrty_matrix.tex}
 
-Suppose we have a set of items
+Membership functions are also defined in this step. A membership function best describes the degree of truth in fuzzy logic. As an example if we were considering \textit{diastolic blood pressure} as a feature then this could be described with the membership functions shown in Figure \ref{fig:diastolic}.
+
+\input{fig/Fig_diastolic_function.tex}
+
+\noindent
+\textbf{Step 2}: Select the most noteworthy classification rules using the linguistic definitions from step 1 along with any crisp values. This step needs to include a mechanism for handling exponential growth in noteworthy rules as the features in a domain increase.
+
+For traditional crisp association rule mining our feature values maybe boolean or quantitative. The selection process involves finding rules that satisfy a minimum support and confidence value. So if we suppose we have a set of items
 
 \textit{I} = \{$i_1$, $i_2$,...., $i_m$\}
 
-if \textit{D} represents the set of all transactions and each transaction \textit{t} is a set of items where \textit{t} $\subseteq$ \textit{I}.
-
-We introduce a unique identifier \textit{TID} to each transaction and let \textit{A} be a set of arbitrary items in \textit{I}. A transaction \textit{t} contains \textit{A} $\iff$ \textit{A} $\subseteq$ \textit{I}. Each association rule is of the form \textit{A} $\Rightarrow$ \textit{B}, where \textit{A} $\subset$ \textit{I}, \textit{B} $\subset$ \textit{I}, and \textit{A} $\cap$ \textit{B} = $\phi$.
-
+\noindent
+and \textit{D} represents the set of all transactions where each transaction \textit{t} is a set of items and \textit{t} $\subseteq$ \textit{I}.
+% We introduce a unique identifier \textit{TID} to each transaction and 
+Let \textit{A} be a set of arbitrary items in \textit{I}. A transaction \textit{t} contains \textit{A} $\iff$ \textit{A} $\subseteq$ \textit{I}. Each association rule is of the form \textit{A} $\Rightarrow$ \textit{B}, where \textit{A} $\subset$ \textit{I}, \textit{B} $\subset$ \textit{I}, and \textit{A} $\cap$ \textit{B} = $\phi$.
 We can now define support (\textit{Sup}) as the percentage of transactions that contain both \textit{A} and \textit{B}
 
 % See http://www.lsv.fr/~markey/LaTeX/doc/Mathmode.pdf
@@ -102,6 +111,7 @@ We can now define support (\textit{Sup}) as the percentage of transactions that 
 %     \label{eq:centered}2f(x) & = \int\frac{1}{x^2}\,\mathrm{d}x3
 % \end{align}
 
+\noindent
 and confidence \textit{Conf} as the percentage of transactions in \textit{D} containing \textit{A} that also contain \textit{B}.
 
 \begin{align}
@@ -109,7 +119,39 @@ and confidence \textit{Conf} as the percentage of transactions in \textit{D} con
     % \textit{Sup}(\textit{A} $\Rightarrow$ \textit{B}) = $\frac{\textit{t} \cap}{\textit{D}}$
 \end{align}
 
-To date we have implemented a proof of concept of this technique that replicates the findings of Chen et al. (2008~\cite{chen2008mining} and 2009~\cite{chen2009mining}).
+\noindent
+Now typically in a non fuzzy approach we would introduce the Apriori algorithm which uses the
+definitions for \textit{Sup} and \textit{Conf} to perform a two step procedure where itemsets are generated and tested against \textit{Sup}. The steps are:
+
+\noindent
+\textbf{Step 2.1}: set \textit{k} = 1; \textit{largeItemSet} = \textit{empty}
+
+\noindent
+\textbf{Step 2.2}: find all \textit{candidateItemsets} of size \textit{k} from original dataset
+
+\noindent
+\textbf{Step 2.3}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
+
+\noindent
+\textbf{Step 2.4}: set \textit{k} = \textit{k} + 1
+
+\noindent
+\textbf{Step 2.5}: find all \textit{candidateItemsets} of size \textit{k} from \textit{largeItemSet}
+
+\noindent
+\textbf{Step 2.6}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
+
+\noindent
+\textbf{Step 2.7}: if \textit{k} $\leq$ \textit{numberOfFeatures} go to Step 2.4
+
+\noindent
+\textbf{Step 2.8}: output all \textit{largeItemSet} combinations that have a confidence value larger than \textit{Conf}
+
+\noindent
+Our questionnaire data however does not only contain quantitative data and so we need to define support and confidence formula for our linguistic answers.
+
+
+To date we have implemented a proof of concept of this technique that replicates the findings of Chen et al.(2008~\cite{chen2008mining}, 2009~\cite{chen2009mining}).
 The solution is written in Python and uses Neo4j as a datastore, through using a more dynamic approach the implementation of our research goals should be faster to achieve.
 
 

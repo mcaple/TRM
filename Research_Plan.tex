@@ -72,6 +72,47 @@ design will not cater for this scenario.
 
 This objective corresponds to research question 1. To the best of my knowledge, through my literature review, no research exists that addresses the classification of closed-ended medical questionnaire's using fuzzy association rule mining. Furthermore, my literature review shows that no work has taken the predicted rule parameters from such mining and applied neural networks to fine tune the results.
 
+Fuzzy classification can be considered as two distinct major steps
+
+Step 1: Create our distinct linguistic definitions to be able to describe a given domain feature in a fuzzy or non crisp manner.
+
+Step 2: Select the most noteworthy classification rules using these linguistic definitions. This step needs to include a mechanism for handling exponential growth in noteworthy rules as the features in a domain increase.
+
+The selection process involves finding rules that satisfy a minimum support and confidence value.
+
+Suppose we have a set of items
+
+\textit{I} = \{$i_1$, $i_2$,...., $i_m$\}
+
+if \textit{D} represents the set of all transactions and each transaction \textit{t} is a set of items where \textit{t} $\subseteq$ \textit{I}.
+
+We introduce a unique identifier \textit{TID} to each transaction and let \textit{A} be a set of arbitrary items in \textit{I}. A transaction \textit{t} contains \textit{A} $\iff$ \textit{A} $\subseteq$ \textit{I}. Each association rule is of the form \textit{A} $\Rightarrow$ \textit{B}, where \textit{A} $\subset$ \textit{I}, \textit{B} $\subset$ \textit{I}, and \textit{A} $\cap$ \textit{B} = $\phi$.
+
+We can now define support (\textit{Sup}) as the percentage of transactions that contain both \textit{A} and \textit{B}
+
+% See http://www.lsv.fr/~markey/LaTeX/doc/Mathmode.pdf
+% https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+
+\begin{align}
+    \textit{Sup}(\textit{A} \Rightarrow \textit{B}) = \frac{\mid \textit{t}_A \cap \textit{t}_B \mid}{\mid \textit{D} \mid}
+    % \textit{Sup}(\textit{A} $\Rightarrow$ \textit{B}) = $\frac{\textit{t} \cap}{\textit{D}}$
+\end{align}
+
+% \begin{align}
+%     \label{eq:centered}2f(x) & = \int\frac{1}{x^2}\,\mathrm{d}x3
+% \end{align}
+
+and confidence \textit{Conf} as the percentage of transactions in \textit{D} containing \textit{A} that also contain \textit{B}.
+
+\begin{align}
+    \textit{Conf} = \frac{\textit{Sup}(\textit{A} \Rightarrow \textit{B})}{\textit{Sup}(\textit{A})} = \frac{\mid \textit{t}_A \cap \textit{t}_B \mid}{\mid \textit{t}_B \mid}
+    % \textit{Sup}(\textit{A} $\Rightarrow$ \textit{B}) = $\frac{\textit{t} \cap}{\textit{D}}$
+\end{align}
+
+To date we have implemented a proof of concept of this technique that replicates the findings of Chen et al. (2008~\cite{chen2008mining} and 2009~\cite{chen2009mining}).
+The solution is written in Python and uses Neo4j as a datastore, through using a more dynamic approach the implementation of our research goals should be faster to achieve.
+
+
 \subsubsection{Objective 2. To define a mechanism whereby results of physical medical assessments are fed back into the system for a better predictor.}
 
 This objective corresponds to research question 2. The physical medical assessment is outside the core architectural boundaries of the current system. There are many factors to this including geographic remoteness or the use of third party independent assessors. In order for any selected candidate to be both accurately determined and done so in a timely fashion it is vitally important that results of physical assessments are fed back into the system promptly. In fulfilling this the research will not only complete a design criteria but will also help to fill another literature gap. Chen et al. (2009~\cite{chen2009mining}) concluded that their design proved to be slow as the fuzzy membership routines were static. In feeding back this assessment information into the system the research will use the data to deduce dynamic membership routines.
@@ -80,6 +121,35 @@ This objective corresponds to research question 2. The physical medical assessme
 \subsubsection{Objective 3. To build an anomaly detection routine to predict a list of candidates of concern.}
 
 This objective corresponds to research question 3. The literature review has demonstrated very little research that has catered for questionnaire responses to all of Marshall's (2005~\cite{marshall2005purpose}) five data types. The main objective of this research is to use fuzzy association rule mining to improve on this situation. This objective however will endeavour to apply a number of the state of the art algorithms used in machine learning to discover rare conditions within the candidates. In completing this objective the very small pool of anomaly detection that has been applied to closed-ended questionnaire data will be enhanced. Once these anomalies are detected the research will verify if removal of such candidates leads to a better predictor of the system as a whole.
+
+%https://au.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html
+
+We have to date implemented an anomaly detection technique originally in Octave and later ported into MATLAB. The implemented work uses a current production system that has a lot of data but lacks some integrity constraints to ensure that data is always correct.
+A similar approach will be undertaken with the system currently being developed once sufficient data becomes available.
+
+\par
+\noindent
+The approach can be broken down into the following steps:
+
+\textbf{Step 1:} Select features that will be used to base our decision on whether a candidate maybe considered anomalous. Our industry partner has initially chosen BMI Banding (Table~\ref{tab:BMIBanding}), daily consumption of cigarettes, age and sex. These features should be open to change as the project evolves.
+
+\input{Table/Tbl_bmi_banding.tex}
+
+\textbf{Step 2:} Load, explore and clean data. The data cleansing part of this step is particularly important due to the integrity issues of the current system. The implementation removes data with poor integrity. It is at this step the distribution of a feature will be examined and all features will have their values normalised. Normalisation prevents features with a large range swamping those that do not.
+
+\textbf{Step 3:} Define the network architecture. Whilst using the data solely from the original system it was decided not to use any type of Deep Neural Network. At this point in the research the decision was made to use both the Linear regression (Seber \& Lee, 2012~\cite{seber2012linear}) and SVM (Noble, 2006~\cite{noble2006support}) algorithms as having the ability to exclude rare occurrences was considered more important than the accuracy of those decisions. Moving forward it is the intention of the research to introduce a Deep Neural Network architecture.
+
+% can use the following to decide upon algorithms to use
+
+\textbf{Step 4:} Specify training options.
+
+\textbf{Step 5:} Train the network.
+
+How did we select the data, random?
+The current system although lacking integrity does contain sufficient data for a classic split of the data into training, cross validation and test data. When the new system comes on line a less rigid split will need to be used involving some kind of k-fold cross validation to cater for the initial lack of data. To date some work has been done using a leave-one-out technique to gain familiarity with the approach.
+
+\textbf{Step 6:} Predict the labels of new data and calculate the classification accuracy. Both linear regression and SVM struggled to correctly classify anomalous candidates. In total from a test population of 2834 there were actually 20 candidates rejected however our solution predicted none of these. Upon closer examination of these 20 however it became apparent that these candidates had been rejected for reasons outside of the questionnaire. For example one candidate was rejected after the assessor discovered that they had only one arm which was a question not asked through the particular job questionnaire but the job had required both arms. Other candidates were rejected for reasons that the company gave to the assessor directly and not through the questionnaire process. These findings will be fed back into giving the next iteration of the system more data integrity.
+
 
 \subsubsection{Objective 4. To build a model whereby assessments maybe compared along a timeline so that assessments taken multiple times maybe analysed.}
 

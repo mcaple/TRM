@@ -157,7 +157,23 @@ The solution is written in Python and uses Neo4j as a datastore, through using a
 
 \subsubsection{Objective 2. To define a mechanism whereby results of physical medical assessments are fed back into the system for a better predictor.}
 
-This objective corresponds to research question 2. The physical medical assessment is outside the core architectural boundaries of the current system. There are many factors to this including geographic remoteness or the use of third party independent assessors. In order for any selected candidate to be both accurately determined and done so in a timely fashion it is vitally important that results of physical assessments are fed back into the system promptly. In fulfilling this the research will not only complete a design criteria but will also help to fill another literature gap. Chen et al. (2009~\cite{chen2009mining}) concluded that their design proved to be slow as the fuzzy membership routines were static. In feeding back this assessment information into the system the research will use the data to deduce dynamic membership routines.
+This objective corresponds to research question 2. The physical medical assessment is outside the core architectural boundaries of the current system. There are many factors to this including geographic remoteness or the use of third party independent assessors. In order for any selected candidate to be both accurately determined and done so in a timely fashion it is vitally important that results of physical assessments are fed back into the system promptly. In fulfilling this the research will not only complete a design criteria but will also help to fill another literature gap. Chen et al. (2009~\cite{chen2009mining}) concluded that their design proved to be slow as the fuzzy membership routines were static. In feeding back this assessment information from clinical experts into the system the membership functions themselves will be altered over time and in doing so become dynamic.
+
+To better explain this, imagine we are dealing with a crisp set, a membership function is either \textit{True} or \textit{False}, for example someone is either born in Australia or not, there is no middle ground. What about however if we wanted to specify if a person is \textit{Healthy} this is far less rigid. It could be decided on a number of factors such as they (i) can perform a set number of exercises without becoming breathless; (ii) have not visited a doctor in X years; (iii) do not consume cigarettes, alcohol or other stimulants. It is for this type of attribute that membership functions are required, they will assign a value in the range of 0 (\textit{False}) \& 1 (\textit{True}) to establish in this case how \textit{Healthy} someone is from assigning weightings to the factors (i),(ii) \& (iii) previously mentioned.
+
+Marasini et al. (2016~\cite{marasini2016intuitionistic}) state that there are four main approaches that can be used
+to define a membership function:
+
+\begin{itemize}
+    \item a "best" mathematical function
+    \item a probabilistic point of view
+    \item decision-theoretic approach
+    \item axiomatic measurement theory
+\end{itemize}
+
+The idea of intuitionistic fuzzy sets in questionnaire analysis has been covered extensively within the work of Marasini et al. (2016~\cite{marasini2016intuitionistic}).
+
+Kostikova et al. (2016~\cite{kostikova2016expert}) cover how dynamic membership functions maybe achieved.
 
 
 \subsubsection{Objective 3. To build an anomaly detection routine to predict a list of candidates of concern.}
@@ -187,7 +203,6 @@ The approach can be broken down into the following steps:
 
 \textbf{Step 5:} Train the network.
 
-How did we select the data, random?
 The current system although lacking integrity does contain sufficient data for a classic split of the data into training, cross validation and test data. When the new system comes on line a less rigid split will need to be used involving some kind of k-fold cross validation to cater for the initial lack of data. To date some work has been done using a leave-one-out technique to gain familiarity with the approach.
 
 \textbf{Step 6:} Predict the labels of new data and calculate the classification accuracy. Both linear regression and SVM struggled to correctly classify anomalous candidates. In total from a test population of 2834 there were actually 20 candidates rejected however our solution predicted none of these. Upon closer examination of these 20 however it became apparent that these candidates had been rejected for reasons outside of the questionnaire. For example one candidate was rejected after the assessor discovered that they had only one arm which was a question not asked through the particular job questionnaire but the job had required both arms. Other candidates were rejected for reasons that the company gave to the assessor directly and not through the questionnaire process. These findings will be fed back into giving the next iteration of the system more data integrity.
@@ -197,6 +212,19 @@ The current system although lacking integrity does contain sufficient data for a
 
 This objective corresponds to research question 4. Chen et al. (2009~\cite{chen2009mining}) had demonstrated the inability of their research to analyse associations between questionnaire's over time. By addressing this gap this research will also benefit the industry partner's goal of comparing candidate's assessments over time. This will answer a broader question of whether a given candidate may prove unsuitable for any role or simply an individual role. One further goal of the industry partner is to allow unsuccessful candidates to be given suggestions of possible alternate rolls that they would be suitable for. This objective goes a long way to achieving this goal.
 
+As different job roles will require the use of varying sets of questions it is paramount that we are able to in some way compare the answers for different roles in order that we may recommend am unsuccessful candidate for a more suitable role. Krusaa et al. (\cite{krusaatransfer}) propose a \textit{Questionnaire-Based Efficient Adaptive Transfer Neural Network}, QEATNN that learns to transfer knowledge between a social media and questionnaire domain. We will adapt this approach of transferring knowledge between disparate domains and instead use differing questionnaire domains.
+
+The basic steps are:
+
+\noindent
+\textbf{Step 1:} Select representative questions from each questionnaire that are able to be transferred
+
+\noindent
+\textbf{Step 2:} Apply the work of Shi et al. (2017, \cite{shi2017local}) to create a model using Local Representative-Based
+Matrix Factorisation, LRMF that splits the representative questions into global (global attributes) and local (personal attributes) representatives.
+
+\noindent
+\textbf{Step 3:} Deduce whether sufficient local representatives of an unsuccessful candidate from one questionnaire domain match those of a successful candidate from another domain and if so recommend this candidate for the alternate role.
 
 \subsection{Demonstrate the artefact can be used to help solve the focal problem}
 

@@ -6,81 +6,134 @@
 %\pgfplotsset{width=30cm,compat=1.9}
 %\usetikzlibrary{patterns}
 
+
+% \usepackage{enumerate}
+
+\pagenumbering{arabic}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
 \begin{document}
 \thispagestyle{empty}
 
 \noindent
-\textbf{Workshop cover page}
+% \textbf{Workshop cover page}
 
-\begin{itemize}
-	\item Topic
-	\item Keywords
-	\item Thesis statement 1
-	\item Thesis statement 2
-	\item Aim 1
-	\item Aim 2
-	\item Objective 1 including success condition
-	\item Objective 2 including success condition
-	
-\end{itemize}
+% \begin{itemize}
+% 	\item Topic
+% 	\item Keywords
+% 	\item Thesis statement 1
+% 	\item Thesis statement 2
+% 	\item Aim 1
+% 	\item Aim 2
+% 	\item Objective 1 including success condition
+% 	\item Objective 2 including success condition
+
+% \end{itemize}
+
+
+
+
+
+
 
 \par
 \noindent
-Broad research topic
-
-\par
-\textit{Association Rule Mining}
+1. Broad research topic: \textit{Association Rule Mining}
 
 \noindent
-Currently we have a focused topic about my research
-
-\textit{Association Rule Mining and Decision Making for Closed-Ended Hierarchical Questionnaire Data} 
-
-\noindent
-or maybe
-
-\textit{Discovering Outlier Candidates Using Only their Closed-Ended Medical Questionnaire Data}
-
+2. Currently we have a focused topic: \textit{Association Rule Mining and Decision Making for Closed-Ended Hierarchical Questionnaire Data}
+% or : \textit{Discovering Outlier Candidates Using Only their Closed-Ended Medical Questionnaire Data}
 
 \noindent
-We can turn this into a claim 
-
-\textit{No one has used association rule mining to make decisions on closed-ended questionnaire data.}
+3. We can turn this into a claim: \textit{No one has used association rule mining to make decisions on closed-ended questionnaire data.}
 
 \noindent
-Developing a question
-
-Some things to think about:
-
-\begin{itemize}
-	\item The history of your topic
-	\item The structure and composition of your topic
-	\item The categorisation of your topic
-	\item Develop negative questions–Why has EIT not been carried out with RF fields?
-	\item Develop speculative questions.
-	\item Extend questions posed in the literature
-\end{itemize}
+4. Keywords: \textit{("census" OR "application" OR "survey" OR "questionnaire" OR "poll" OR "canvass") AND
+	("closed") AND
+	("medical" OR "health") AND
+	("classification") AND
+	("anomaly" OR "anomalous" OR "imbalance" OR "rarity" OR "exception" OR "oddity" OR "inconsistency" OR "abnormality")}
 
 
 \noindent
-Why is this important? What's the reason for the research?
+5. Thesis statement: \textit{Selecting a good job candidate, that matches a role, to progress to an actual medical is possible through association rule mining using only their closed health questionnaire responses.}
 
-\textit{This is in order to help my reader understand how association rules can be used to  .....}
+% \noindent
+% Developing a question
+
+% Some things to think about:
+
+% \begin{itemize}
+% 	\item The history of your topic
+% 	\item The structure and composition of your topic
+% 	\item The categorisation of your topic
+% 	\item Develop negative questions–Why has EIT not been carried out with RF fields?
+% 	\item Develop speculative questions.
+% 	\item Extend questions posed in the literature
+% \end{itemize}
 
 \noindent
-Research statement
+6. The main aim of the project is closely related to the most critical stakeholder and industry partner.
 
-\textit{Consequence of my research is that candidates that would inevitably fail a medical assessment maybe excluded before the actual assessment.}
+%\textit{How can we use machine learning techniques so that the goal of replacing actual medical assessments with a questionnaire becomes a viable proposition for our industry partner?}
 
-\textit{I am trying to study if it is possible to use association rule mining to draw conclusions on the medical readiness of a candidate for a certain position given only the information they provide from a closed questionnaire.}
+\textit{How can we apply machine learning techniques to a questionnaire to replace the role of high cost medical assessments used in selecting a candidate for a specific job role and yet still avoid the liability risk of an incorrect choice?}
+
+\begin{enumerate} [label=Question \arabic*:, leftmargin=*]
+	\item Is it possible, in a timely manner, to reduce the need for a physical medical assessment for a job role by introducing a suitability predictor using only responses given in a medical questionnaire?
+
+	\item Is it possible to improve upon the suitability predictor by allowing actual medical assessment results to be fed back into the live system?
+
+	\item Would removing rare or anomalous candidates from the pool of candidates create a better suitability predictor?
+
+	\item How to analyse and compare the results of repeat medical assessments from the same candidate for different job roles over time?
+
+	\item How to verify and validate the above aims?
+\end{enumerate}
 
 \noindent
-Thesis statement
+7. Our objectives are:
 
-\textit{Selecting a good job candidate that matches a role to progress to an actual medical is possible through association rule mining using only their closed health questionnaire responses.}  
+Objective 1. To classify a candidate into a small number of groups that give a sliding suitability score. Success will demonstrate that our industry partner is able to rely on the initial accuracy of the classification from this objective of at least 60\%. Later objectives will refine this percentage.
 
-\noindent
-Alternative way of developing a thesis statement by using the topic and keywords, such as
+Objective 2. To define a mechanism whereby results of physical medical assessments are fed back into the system for a better predictor. Success will show that our classification accuracy improves demonstrably by introducing dynamic membership functions.
+
+Objective 3. To build an anomaly detection routine to predict a list of candidates of concern. Success will be measured by two measures. Firstly the ability to discover rare candidates from a dynamic feature set and also whether overall accuracy of classification improves with removal of such candidates.
+
+Objective 4. To build a model whereby assessments maybe compared along a timeline so that assessments taken multiple times maybe analysed. Success will be measured by the reduction of candidate questionnaires for multiple roles. With this in mind the current system is being monitored for average questionnaire completion.
+
+Objective 5. To evaluate the developed artefacts from the previous objectives. Success here involves comparing the developed artifacts using some very well defined methods such as confusion matrix, ROC graphs and F1 scores and so will be the most open to interpretation of success of all the objectives.
+
+
+
+
+
+
+
+
+
+% \noindent
+% Why is this important? What's the reason for the research?
+
+% \textit{This is in order to help my reader understand how association rules can be used to  .....}
+
+% \noindent
+% Research statement
+
+% \textit{Consequence of my research is that candidates that would inevitably fail a medical assessment maybe excluded before the actual assessment.}
+
+% \textit{I am trying to study if it is possible to use association rule mining to draw conclusions on the medical readiness of a candidate for a certain position given only the information they provide from a closed questionnaire.}
+
+% \noindent
+% Thesis statement
+
+% \textit{Selecting a good job candidate that matches a role to progress to an actual medical is possible through association rule mining using only their closed health questionnaire responses.}
+
+% \noindent
+% Alternative way of developing a thesis statement by using the topic and keywords, such as
 
 \vspace{8pt}
 \end{document}

@@ -32,9 +32,12 @@ These databases were selected as they cover a wide corpus of the literature asso
 
 \input{Tbl_search_keywords}
 
+% This leads our search string to the following form \textit{("data mining" OR "classification")
+%   AND "association rules" AND ("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")
+%   AND ("fuzzy" OR "non crisp") }
 This leads our search string to the following form \textit{("data mining" OR "classification")
-  AND "association rules" AND ("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")
-  AND ("fuzzy" OR "non crisp") }
+  AND ("questionnaire")
+  AND ("closed") }
 % ("questionnaire" OR "poll" OR "census"  OR "canvass" OR "survey" ) AND
 %   ("data mining" or classification) AND
 %   ("medical" OR "health") AND
@@ -81,11 +84,13 @@ After the initial selection process \textit{2nd Filter} shows the number of rele
 
 \subsubsection{Scopus}
 \noindent
-TITLE-ABS-KEY("mining" OR "classifi*") and TITLE-ABS-KEY("association rules") and TITLE-ABS-KEY("questionnaire" or "poll" or "census" OR "canvass" OR "survey") and TITLE-ABS-KEY("fuzzy" or "non crisp") AND (PUBYEAR $>$ 2004)
+% TITLE-ABS-KEY("mining" OR "classifi*") and TITLE-ABS-KEY("association rules") and TITLE-ABS-KEY("questionnaire" or "poll" or "census" OR "canvass" OR "survey") and TITLE-ABS-KEY("fuzzy" or "non crisp") AND (PUBYEAR $>$ 2004)
+TITLE-ABS-KEY(("mining" OR "classifi*") AND "questionnai*" AND "close*") AND (PUBYEAR $>$ 2004)
 
 \subsubsection{Proquest}
 \noindent
-(ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("association rules") OR abs("association rules")) AND (ti("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) OR abs("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND ("fuzzy" OR "non crisp")
+% (ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("association rules") OR abs("association rules")) AND (ti("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) OR abs("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND ("fuzzy" OR "non crisp")
+(ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("questionnai*") OR abs("questionnai*")) AND (ti("close*") OR abs("close*"))
 
 \noindent
 with a filter of on or after 1/1/2005
@@ -95,13 +100,15 @@ with a filter of on or after 1/1/2005
 \textit{Edit Query}
 
 \noindent
-(Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp")
+% (Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp")
+(Title:((mining OR classifi*) AND (questionnai*) AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai*) AND (close*))
 
 \noindent
 \textit{Full Query Syntax}
 
 \noindent
-"query": { (Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp") }
+% "query": { (Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp") }
+"query": { (Title:((mining OR classifi*) AND (questionnai*) AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai*) AND (close*))}
 "filter": { Publication Date: (01/01/2005 TO 12/31/2020), ACM Content: DL, NOT VirtualContent: true }
 
 \subsubsection{Google Scholar}
@@ -109,17 +116,22 @@ with a filter of on or after 1/1/2005
 The search options in scholar are limited compared to other databases and the closest search to previous databases can be performed by sorting by date and selecting 'Abstract' rather than 'Everything'. This unfortunately only shows papers in the current year. The following two searches were performed to look for "mining" or "classification"
 
 \begin{enumerate}
-  \item mining "association rules" questionnaire
-  \item classification "association rules" questionnaire
+  % \item mining "association rules" questionnaire
+  % \item classification "association rules" questionnaire
+  \item  mining questionnaire closed
+  \item  classification questionnaire closed
 \end{enumerate}
 
 \subsubsection{IEEE Explore}
 \noindent
-("Document Title":"mining"  OR "Document Title":"classifi*" OR "Abstract":"mining" OR "Document Title":"classifi*") AND
-("Document Title":"association rules" OR "Abstract":"association rules") AND
-(("Document Title":"questionnaire" OR "Document Title":"poll" OR  "Document Title":"census" OR "Document Title":"canvas" OR "Document Title":"survey") OR
-("Abstract":"questionnaire" OR "Abstract":"poll" OR  "Abstract":"census" OR "Abstract":"canvas" OR "Abstract":"survey"))  AND
-("Full Text .AND. Metadata":"fuzzy" OR "Full Text .AND. Metadata":"non crisp")
+% ("Document Title":"mining"  OR "Document Title":"classifi*" OR "Abstract":"mining" OR "Document Title":"classifi*") AND
+% ("Document Title":"association rules" OR "Abstract":"association rules") AND
+% (("Document Title":"questionnaire" OR "Document Title":"poll" OR  "Document Title":"census" OR "Document Title":"canvas" OR "Document Title":"survey") OR
+% ("Abstract":"questionnaire" OR "Abstract":"poll" OR  "Abstract":"census" OR "Abstract":"canvas" OR "Abstract":"survey"))  AND
+% ("Full Text .AND. Metadata":"fuzzy" OR "Full Text .AND. Metadata":"non crisp")
+("Document Title":"mining" OR "Document Title":"classifi*" OR "Abstract":"mining"
+OR "Document Title":"classifi*") AND (("Document Title":"questionnai*" AND "Document Title":"close*") OR ("Abstract":"questionnai*" AND "Abstract":"close*"))
+
 
 \noindent
 with a filter of on or after 1/1/2005

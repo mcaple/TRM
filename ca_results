@@ -1,0 +1,196 @@
+TITLE-ABS-KEY ( ( "mining"  OR  "classifi*" )  AND  "questionnai*"  AND  "closed" ) AND (PUBYEAR > 2004)
+
+Scopus 313
+
+New references
+
+
+26
+
+@article{spasic2018closing,
+  title={Closing in on open-ended patient questionnaires with text mining},
+  author={Spasic, Irena and Owen, David and Smith, Andrew and Button, Kate},
+  year={2018}
+}
+
+
+38
+
+@article{vaitkus2019kamst,
+  title={KAMST--Simple method for patients with migraine screening},
+  author={Vaitkus, Antanas and Macaityt{\.e}, Raminta and Kiudulait{\.e}, Inga},
+  journal={Medical hypotheses},
+  volume={128},
+  pages={21--24},
+  year={2019},
+  publisher={Elsevier}
+}
+
+
+55
+
+@article{niven2019cigarette,
+  title={Cigarette smoking on severity of primary angle closure Glaucoma in malay patients},
+  author={Niven, Teh Chong Seong and Azhany, Yaakub and Rohana, Abdul J and Karunakar, Tirmandas VN and Thayanithi, Sandragasu and Jelinar Noor, Mohd N and Norhalwani, Husain and Zuraidah, Mustari and Siti Azrin, Ab H and Ahmad, Mt S and others},
+  journal={Journal of Glaucoma},
+  volume={28},
+  number={1},
+  pages={7--13},
+  year={2019},
+  publisher={Wolters Kluwer}
+}
+
+
+71
+
+@article{li2018development,
+  title={Development and pilot-testing of the Alopecia Areata Assessment Tool (ALTO)},
+  author={Li, David G and Huang, Kathie P and Xia, Fan Di and Joyce, Cara and Scott, Deborah A and Qureshi, Abrar A and Mostaghimi, Arash},
+  journal={PloS one},
+  volume={13},
+  number={6},
+  pages={e0196517},
+  year={2018},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+
+80
+
+@article{craven2018community,
+  title={Community-living older adults’ perceptions of body weight, signs of malnutrition and sources of information: a descriptive analysis of survey data},
+  author={Craven, Dana L and Lovell, Geoff P and Pelly, Fiona E and Isenring, E},
+  journal={The journal of nutrition, health \& aging},
+  volume={22},
+  number={3},
+  pages={393--399},
+  year={2018},
+  publisher={Springer}
+}
+
+159
+
+@article{borg2015development,
+  title={Development of a pelvic discomfort index to evaluate outcome following fixation for pelvic ring injury},
+  author={Borg, Tomas and Hernefalk, Bjorn and Carlsson, Marianne and Larsson, Sune},
+  journal={Journal of Orthopaedic Surgery},
+  volume={23},
+  number={2},
+  pages={146--149},
+  year={2015},
+  publisher={Sage Publications Sage UK: London, England}
+}
+
+
+188
+
+@article{cavalcante2014low,
+  title={Low back pain in adolescents: a school screening},
+  author={Cavalcante Filho, Draut Ernani Aires and de Lima Viana, Cristiano Nunes and de Santana, Maria do Perp{\'e}tuo Socorro and Cunha, Francisco Valmor Macedo and de Sousa Pacheco, Fernanda and da Silva Brito, Ana Karolinne and de Assis, Regina C{\'e}lia and de Carvalho, Maria do Carmo and others},
+  journal={Journal of Human Growth and Development},
+  volume={24},
+  number={3},
+  pages={347--353},
+  year={2014}
+}
+
+205
+
+@article{tranquilli2013definition,
+  title={The definition of severe and early-onset preeclampsia. Statements from the International Society for the Study of Hypertension in Pregnancy (ISSHP)},
+  author={Tranquilli, Andrea L and Brown, Mark A and Zeeman, Gerda G and Dekker, Gustaaf and Sibai, Baha M},
+  journal={Pregnancy Hypertension: An International Journal of Women's Cardiovascular Health},
+  volume={3},
+  number={1},
+  pages={44--47},
+  year={2013},
+  publisher={Elsevier}
+}
+
+208
+
+@article{friedman2012predicting,
+  title={Predicting 7-day and 3-month functional outcomes after an ED visit for acute nontraumatic low back pain},
+  author={Friedman, Benjamin W and Mulvey, Laura and Davitt, Michelle and Choi, Hong and Esses, David and Bijur, Polly E and Gallagher, E John},
+  journal={The American journal of emergency medicine},
+  volume={30},
+  number={9},
+  pages={1852--1859},
+  year={2012},
+  publisher={Elsevier}
+}
+
+
+proquest
+
+(ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("questionnai*") OR abs("questionnai*")) AND (ti("closed") OR abs("closed"))
+
+146
+
+
+46
+
+@article{krause2014identifying,
+  title={Identifying determinants of care for tailoring implementation in chronic diseases: an evaluation of different methods},
+  author={Krause, Jane and Van Lieshout, Jan and Klomp, Rien and Huntink, Elke and Aakhus, Eivind and Flottorp, Signe and Jaeger, Cornelia and Steinhaeuser, Jost and Godycki-Cwirko, Maciek and Kowalczyk, Anna and others},
+  journal={Implementation Science},
+  volume={9},
+  number={1},
+  pages={1--12},
+  year={2014},
+  publisher={BioMed Central}
+}
+
+
+ACM Digital
+
+26
+
+(Title:((mining OR classifi*) AND (questionnai*) AND (closed)) OR Abstract((mining OR classifi*) AND (questionnai*) AND (closed))
+
+@inproceedings{pereira2016students,
+  title={Students' expectations analysis before and after a curricular internship},
+  author={Pereira, Isabel M Br{\'a}s and Silva, Paulo and Esteves, M Teresa Sena and Ribeiro, Margarida M and Guedes, Anabela and Le{\~a}o, Celina P and Soares, Filomena},
+  booktitle={Proceedings of the Fourth International Conference on Technological Ecosystems for Enhancing Multiculturality},
+  pages={113--119},
+  year={2016}
+}
+
+
+Google
+
+mining questionnaire closed
+
+8
+
+classification questionnaire closed
+
+14
+
+
+IEEE
+
+
+("Document Title":"mining" OR "Document Title":"classifi*" OR "Abstract":"mining"
+OR "Document Title":"classifi*") AND (("Document Title":"questionnai*" AND "Document Title":"closed") OR ("Abstract":"questionnai*" AND "Abstract":"closed"))
+
+
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

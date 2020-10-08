@@ -1,0 +1,22 @@
+Agrawal et al. [1] first introduced the problem, and defined it as finding all rules from transaction data satisfying the minimum sup- port and the minimum confidence constraints. Briefly, an associa- tion rule mining algorithm works in two steps: (1) generate all frequent itemsets that satisfy minsup and (2) generate all associa- tion rules that satisfy minconf using the large itemsets.
+
+
+However, in re- gard to closed questionnaire data no systematic mining method has been proposed so far to discover knowledge from them. There- fore, an unanswered question still exists, that is, how to extract knowledge from closed questionnaire data. This motivated us to study how to discover fuzzy association rules from closed ques- tionnaire data. 
+
+First, the traditional approaches are designed for handling nom- inal/Boolean data, ordinal data, or quantitative data exclusively. Currently, no algorithms have been developed to handle these three data types simultaneously
+
+Second, in previous approaches, a transaction is a set of items,
+each of which is associated with a value. For example, in nomi- nal/Boolean data, the associated value is a choice from a set of exclusive categories. Unfortunately, in questionnaire data, it is pos- sible to assign multiple values to a single item. For instance, a user’s favorite fruit may include apples, bananas, and grapes. Since previous algorithms have not addressed the multiple-choice prob- lem, we must consider this issue in our present research.
+
+Third, although previous algorithms for handling quantitative
+data could discover association rules with linguistic terms (fuzzy rules), these algorithms made the assumption that the underlying data was purely quantitative. In other words, these algorithms find fuzzy rules from purely quantitative data, and they cannot deal with raw data involving linguistic terms. Since linguistic ranking/ scales data are likely to appear in a questionnaire dataset, it is nec- essary to resolve this issue also. Therefore,
+
+Blackboard Instruction BBI
+Computer aided instruction CAI
+Audio visual instruction AVI
+
+1         2     3       4                    5
+Category, list, number, rank/ multiple rank, linguistic rank/ multiple linguistic rank 
+
+
+

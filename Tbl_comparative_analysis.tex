@@ -1,48 +1,68 @@
+
+% \newgeometry{top=5mm, bottom=10mm}
+
+% \changepage{-5\baselineskip}{10em}{-5em}{-5em}{}
+
+\newpage
+
+%\changepage{〈text height〉}{〈text width〉}{〈even-side margin〉}{〈odd-side margin〉}{〈column sep.〉}{〈topmargin〉}{〈headheight〉}{〈headsep〉}{〈footskip〉
+\changepage{}{}{-1.8cm}{-1.8cm}{}{}{}{}{}
+
 % An extra wide table 
 \begin{landscape}
     \begin{table}[htbp]
-        \caption{Comparative analysis}
-        \label{tab:TBL_Comparative_Analisys}
-        \centering
-        \small
-        \setlength\tabcolsep{2pt}
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-            \hline
-                                                                     & \textbf{Closed-ended}  & \textbf{Machine}  & \textbf{Mining}     & \textbf{Medical} & \textbf{Dynamic}    & \textbf{Anomaly}   & \textbf{Timeline} & \textbf{Neural Network} \\
-            \textbf{Author}                                          & \textbf{Questionnaire} & \textbf{Learning} & \textbf{Method}     & \textbf{Data}    & \textbf{Membership} & \textbf{Detection} & \textbf{Analysis} & \textbf{Fine Tuning}    \\
-            \hline
-            Borg et al. (20015~\cite{borg2015development})           & Part                   & No                & Scree Test          & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Cavalcante et al. (2014~\cite{cavalcante2014low})        & Yes                    & No                & SPSS                & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Chen et al. (2008~\cite{chen2008mining})                 & Yes                    & Yes               & ARM                 & No               & No                  & No                 & No                & No                      \\
-            \hline
-            Chen et al. (2009~\cite{chen2009mining})                 & Yes                    & Yes               & ARM                 & No               & No                  & No                 & No                & No                      \\
-            \hline
-            Craven et al. (2018~\cite{craven2018community})          & Part                   & No                & SPSS                & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Li et al. (2018~\cite{li2018development})                & Yes                    & Yes               & ARM                 & Yes              & Unknown             & No                 & No                & No                      \\
-            \hline
-            Friedman et al. (2011~\cite{friedman2012predicting})     & Yes                    & Yes               & Logistic Regression & Yes              & NA                  & No                 & No                & No                      \\
-            \hline
-            Hu et al. (2020~\cite{hu2020optimizing})                 & Yes                    & Yes               & Sentiment Analysis  & No               & NA                  & No                 & No                & No                      \\
-            \hline
-            Kraus et al. (2014~\cite{krause2014identifying})         & Part                   & No                & Statistical         & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Mamuda et al. (2017~\cite{mamuda2017fusion})             & Unknown                & Yes               & ARM                 & Unknown          & Yes                 & No                 & No                & Yes                     \\
-            \hline
-            Niven et al. (2019~\cite{niven2019cigarette})            & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Pereira et al. (2016~\cite{pereira2016students})         & Yes                    & No                & SPSS                & No               & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Spasic et al. (2018~\cite{spasic2018closing})            & Open mapped to closed  & Yes               & Likert Scale        & Yes              & NA                  & No                 & No                & No                      \\
-            \hline
-            Tranquilli et al. (2013~\cite{tranquilli2013definition}) & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            Vaitkus et al. (2019~\cite{vaitkus2019kamst})            & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
-            \hline
-            \textbf{Our Contribution}                                & \textbf{Yes}           & \textbf{Yes}      & \textbf{ARM hybrid} & \textbf{Yes}     & \textbf{Yes}        & \textbf{Yes}       & \textbf{Yes}      & \textbf{Yes}            \\
-            \hline
-        \end{tabular}
+        \begin{adjustwidth}{-2cm}{}
+            \caption{Comparative analysis}
+            \label{tab:TBL_Comparative_Analisys}
+            \centering
+            \small
+            \setlength\tabcolsep{2pt}
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+                \hline
+                                                                         & \textbf{Closed-ended}  & \textbf{Machine}  & \textbf{Mining}     & \textbf{Medical} & \textbf{Dynamic}    & \textbf{Anomaly}   & \textbf{Timeline} & \textbf{Neural Network} \\
+                \textbf{Author}                                          & \textbf{Questionnaire} & \textbf{Learning} & \textbf{Method}     & \textbf{Data}    & \textbf{Membership} & \textbf{Detection} & \textbf{Analysis} & \textbf{Fine Tuning}    \\
+                \hline
+                Borg et al. (2015~\cite{borg2015development})            & Part                   & No                & Scree Test          & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Cavalcante et al. (2014~\cite{cavalcante2014low})        & Yes                    & No                & SPSS                & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Chen et al. (2008~\cite{chen2008mining})                 & Yes                    & Yes               & ARM                 & No               & No                  & No                 & No                & No                      \\
+                \hline
+                Chen et al. (2009~\cite{chen2009mining})                 & Yes                    & Yes               & ARM                 & No               & No                  & No                 & No                & No                      \\
+                \hline
+                Craven et al. (2018~\cite{craven2018community})          & Part                   & No                & SPSS                & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Li et al. (2018~\cite{li2018development})                & Yes                    & Yes               & ARM                 & Yes              & Unknown             & No                 & No                & No                      \\
+                \hline
+                Friedman et al. (2011~\cite{friedman2012predicting})     & Yes                    & Yes               & Logistic Regression & Yes              & NA                  & No                 & No                & No                      \\
+                \hline
+                Hu et al. (2020~\cite{hu2020optimizing})                 & Yes                    & Yes               & Sentiment Analysis  & No               & NA                  & No                 & No                & No                      \\
+                \hline
+                Kraus et al. (2014~\cite{krause2014identifying})         & Part                   & No                & Statistical         & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Mamuda et al. (2017~\cite{mamuda2017fusion})             & Unknown                & Yes               & ARM                 & Unknown          & Yes                 & No                 & No                & Yes                     \\
+                \hline
+                Niven et al. (2019~\cite{niven2019cigarette})            & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Pereira et al. (2016~\cite{pereira2016students})         & Yes                    & No                & SPSS                & No               & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Spasic et al. (2018~\cite{spasic2018closing})            & Open mapped to closed  & Yes               & Likert Scale        & Yes              & NA                  & No                 & No                & No                      \\
+                \hline
+                Shi et al. (1996~\cite{shi1996learning})                 & No                     & Yes               & ARM                 & Unknown          & NA                  & No                 & No                & Yes                     \\
+                \hline
+                Tranquilli et al. (2013~\cite{tranquilli2013definition}) & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                Vaitkus et al. (2019~\cite{vaitkus2019kamst})            & Yes                    & No                & Assessor            & Yes              & NA                  & NA                 & NA                & NA                      \\
+                \hline
+                \textbf{Our Contribution}                                & \textbf{Yes}           & \textbf{Yes}      & \textbf{ARM hybrid} & \textbf{Yes}     & \textbf{Yes}        & \textbf{Yes}       & \textbf{Yes}      & \textbf{Yes}            \\
+                \hline
+            \end{tabular}
+        \end{adjustwidth}
     \end{table}
 \end{landscape}
+
+% \restoregeometry
+
+\clearpage
+\changepage{}{}{1.8cm}{1.8cm}{}{}{}{}{}
+% \newpage

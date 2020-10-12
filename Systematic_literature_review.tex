@@ -36,7 +36,7 @@ These databases were selected as they cover a wide corpus of the literature asso
 %   AND "association rules" AND ("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")
 %   AND ("fuzzy" OR "non crisp") }
 This leads our search string to the following form \textit{("data mining" OR "classification")
-  AND ("questionnaire")
+  AND ("questionnaire" OR "poll" OR "census"  OR "canvass" )
   AND ("closed") }
 % ("questionnaire" OR "poll" OR "census"  OR "canvass" OR "survey" ) AND
 %   ("data mining" or classification) AND
@@ -78,19 +78,19 @@ The excluded resources will however be maintained so that if during the process 
 \subsection{Selection of primary studies}
 
 The query options for the \textit{1st Filter} for each of the selected databases will be included in this section along with the numbers of relevant papers discovered shown in Table~\ref{tab:SLR_Count}.
-After the initial selection process \textit{2nd Filter} shows the number of relevant papers after a title review to see if the papers are clearly not relevant. \textit{3rd Filter} is after a review of the abstract to decide whether the paper is still suitable for the study.
+After the initial selection process \textit{2nd Filter} shows the number of relevant papers after a title review to see if the papers are clearly not relevant. \textit{3rd Filter} is after a review of the abstract to decide whether the paper is still suitable for the study. \textit{4th filter} is after a more detailed review to see if research is still aligned to our research.
 
 \input{Tbl_slr_count.tex}
 
 \subsubsection{Scopus}
 \noindent
 % TITLE-ABS-KEY("mining" OR "classifi*") and TITLE-ABS-KEY("association rules") and TITLE-ABS-KEY("questionnaire" or "poll" or "census" OR "canvass" OR "survey") and TITLE-ABS-KEY("fuzzy" or "non crisp") AND (PUBYEAR $>$ 2004)
-TITLE-ABS-KEY(("mining" OR "classifi*") AND "questionnai*" AND "close*") AND (PUBYEAR $>$ 2004)
+TITLE-ABS-KEY(("mining" OR "classifi*") AND ("questionnai*" OR "poll" OR "canvas" OR "census")" AND "closed") AND (PUBYEAR $>$ 2004)
 
 \subsubsection{Proquest}
 \noindent
 % (ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("association rules") OR abs("association rules")) AND (ti("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) OR abs("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND ("fuzzy" OR "non crisp")
-(ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("questionnai*") OR abs("questionnai*")) AND (ti("close*") OR abs("close*"))
+(ti("mining" OR "classifi*") OR abs("mining" OR "classifi*")) AND (ti("questionnai*" OR "poll" OR "canvas" OR "census" ) OR abs("questionnai*" OR "poll" OR "canvas" OR "census")) AND (ti("close*") OR abs("close*"))
 
 \noindent
 with a filter of on or after 1/1/2005
@@ -101,14 +101,14 @@ with a filter of on or after 1/1/2005
 
 \noindent
 % (Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp")
-(Title:((mining OR classifi*) AND (questionnai*) AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai*) AND (close*))
+(Title:((mining OR classifi*) AND (questionnai* OR "poll" OR "canvas" OR "census") AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai*  OR "poll" OR "canvas" OR "census") AND (close*))
 
 \noindent
 \textit{Full Query Syntax}
 
 \noindent
 % "query": { (Title:("mining" OR "classifi*") OR Abstract:("mining" OR "classifi*")) AND (Title:("association rules") OR Abstract:("association rules")) AND (Title:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey") OR Abstract:("questionnaire" OR "poll" OR "census" OR "canvass" OR "survey")) AND AllField:("fuzzy" OR "non crisp") }
-"query": { (Title:((mining OR classifi*) AND (questionnai*) AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai*) AND (close*))}
+"query": { (Title:((mining OR classifi*) AND (questionnai* OR "poll" OR "canvas" OR "census") AND (close*)) OR Abstract((mining OR classifi*) AND (questionnai* OR "poll" OR "canvas" OR "census") AND (close*))}
 "filter": { Publication Date: (01/01/2005 TO 12/31/2020), ACM Content: DL, NOT VirtualContent: true }
 
 \subsubsection{Google Scholar}
@@ -130,7 +130,7 @@ The search options in scholar are limited compared to other databases and the cl
 % ("Abstract":"questionnaire" OR "Abstract":"poll" OR  "Abstract":"census" OR "Abstract":"canvas" OR "Abstract":"survey"))  AND
 % ("Full Text .AND. Metadata":"fuzzy" OR "Full Text .AND. Metadata":"non crisp")
 ("Document Title":"mining" OR "Document Title":"classifi*" OR "Abstract":"mining"
-OR "Document Title":"classifi*") AND (("Document Title":"questionnai*" AND "Document Title":"close*") OR ("Abstract":"questionnai*" AND "Abstract":"close*"))
+OR "Document Title":"classifi*") AND (("Document Title":"questionnai*" OR "poll" OR "canvas" OR "census" AND "Document Title":"close*") OR ("Abstract":"questionnai*" OR "poll" OR "canvas" OR "census" AND "Abstract":"close*"))
 
 
 \noindent

@@ -1,6 +1,9 @@
-TITLE-ABS-KEY ( ( "mining"  OR  "classifi*" )  AND  "questionnai*"  AND  "closed" ) AND (PUBYEAR > 2004)
+TITLE-ABS-KEY ( ( "mining"  OR  "classifi*" )  AND  ("questionnai*" OR "poll"  OR  "canvas"  OR  "census")  AND  "closed" ) AND (PUBYEAR > 2004)
 
-Scopus 313
+TITLE-ABS-KEY((”mining” OR ”classifi*”) AND ”questionnai*” AND ”close*”)
+AND (PUBYEAR > 2004)
+
+Scopus 332
 
 New references
 

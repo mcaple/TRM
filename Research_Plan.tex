@@ -82,12 +82,13 @@ In this step we introduce similarity matrix which allow us to compare two lingui
 
 \input{Table/Tbl_similarrty_matrix.tex}
 
-Membership functions are also defined in this step. A membership function best describes the degree of truth in fuzzy logic. As an example if we were considering \textit{diastolic blood pressure} as a feature then this could be described with the membership functions shown in Figure \ref{fig:diastolic}.
+\noindent
+\textbf{Step 2}: Membership functions are initially defined in this step. A membership function best describes the degree of truth in fuzzy logic. These functions will change through time with use of previous assessments. As an example if we were considering \textit{diastolic blood pressure} as a feature then this could be described with the membership functions shown in Figure \ref{fig:diastolic}.
 
 \input{fig/Fig_diastolic_function.tex}
 
 \noindent
-\textbf{Step 2}: Select the most noteworthy classification rules using the linguistic definitions from step 1 along with any crisp values. This step needs to include a mechanism for handling exponential growth in noteworthy rules as the features in a domain increase.
+\textbf{Step 3}: Select the most noteworthy classification rules using the linguistic definitions from step 1 and membership functions from step 2 along with any crisp values. This step needs to include a mechanism for handling exponential growth in noteworthy rules as the features in a domain increase.
 
 For traditional crisp association rule mining our feature values maybe boolean or quantitative. The selection process involves finding rules that satisfy a minimum support and confidence value. So if we suppose we have a set of items
 
@@ -124,28 +125,28 @@ Now typically in a non fuzzy approach we would introduce the Apriori algorithm w
 definitions for \textit{Sup} and \textit{Conf} to perform a two step procedure where itemsets are generated and tested against \textit{Sup}. The steps are:
 
 \noindent
-\textbf{Step 2.1}: set \textit{k} = 1; \textit{largeItemSet} = \textit{empty}
+\textbf{Step 3.1}: set \textit{k} = 1; \textit{largeItemSet} = \textit{empty}
 
 \noindent
-\textbf{Step 2.2}: find all \textit{candidateItemsets} of size \textit{k} from original dataset
+\textbf{Step 3.2}: find all \textit{candidateItemsets} of size \textit{k} from original dataset
 
 \noindent
-\textbf{Step 2.3}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
+\textbf{Step 3.3}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
 
 \noindent
-\textbf{Step 2.4}: set \textit{k} = \textit{k} + 1
+\textbf{Step 3.4}: set \textit{k} = \textit{k} + 1
 
 \noindent
-\textbf{Step 2.5}: find all \textit{candidateItemsets} of size \textit{k} from \textit{largeItemSet}
+\textbf{Step 3.5}: find all \textit{candidateItemsets} of size \textit{k} from \textit{largeItemSet}
 
 \noindent
-\textbf{Step 2.6}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
+\textbf{Step 3.6}: if a \textit{candidateItemset} transaction count is greater than \textit{Sup} then it is a frequent itemset and added to the \textit{largeItemSet}.
 
 \noindent
-\textbf{Step 2.7}: if \textit{k} $\leq$ \textit{numberOfFeatures} go to Step 2.4
+\textbf{Step 3.7}: if \textit{k} $\leq$ \textit{numberOfFeatures} go to Step 3.4
 
 \noindent
-\textbf{Step 2.8}: output all \textit{largeItemSet} combinations that have a confidence value larger than \textit{Conf}
+\textbf{Step 3.8}: output all \textit{largeItemSet} combinations that have a confidence value larger than \textit{Conf}
 
 \noindent
 Our questionnaire data however does not only contain quantitative data and so we need to define support and confidence formula for our linguistic answers.
@@ -161,7 +162,7 @@ This objective corresponds to research question 2. The physical medical assessme
 
 To better explain this, imagine we are dealing with a crisp set, a membership function is either \textit{True} or \textit{False}, for example someone is either born in Australia or not, there is no middle ground. What about however if we wanted to specify if a person is \textit{Healthy} this is far less rigid. It could be decided on a number of factors such as they (i) can perform a set number of exercises without becoming breathless; (ii) have not visited a doctor in X years; (iii) do not consume cigarettes, alcohol or other stimulants. It is for this type of attribute that membership functions are required, they will assign a value in the range of 0 (\textit{False}) \& 1 (\textit{True}) to establish in this case how \textit{Healthy} someone is from assigning weightings to the factors (i),(ii) \& (iii) previously mentioned.
 
-Marasini et al. (2016~\cite{marasini2016intuitionistic}) state that there are four main approaches that can be used
+Marasini et al. (2016~\cite{marasini2016intuitionistic}) state that there are at least four main approaches that can be used
 to define a membership function:
 
 \begin{itemize}

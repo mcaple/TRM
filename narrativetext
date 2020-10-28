@@ -1,0 +1,42 @@
+1. An initial POC has been developed solely from an initial system that the industrial partner was already using in order to get an idea of the completeness of the data.  At this point in the research the decision was made to use both the Linear regression (Seber & Lee, 2012 [45]) and SVM (Noble, 2006 [41]) algorithms as having the ability to exclude rare occurrences was considered more important than the accuracy of those decisions. Moving forward it is the intention of the research to introduce a Deep Neural Network architecture
+
+The current system although lacking integrity does contain sufficient data for a classic split of the data into training, cross validation and test data. When the new system comes on line a less rigid split will need to be used involving some kind of k-fold cross validation to cater for the initial lack of data. To date some work has
+been done using a leave-one-out technique to gain familiarity with the approach.
+
+We attempted to predict the labels of new data and calculate the classification accuracy. Both linear regression and SVM struggled to correctly classify anomalous candidates. In total from a test population of 2834 there were actually 20 candidates rejected however our solution predicted none of these. Upon closer examination of these 20 however it became apparent that these candidates had been rejected for reasons
+outside of the questionnaire. For example one candidate was rejected after the assessor discovered that they had only one arm which was a question not asked through the particular job questionnaire but the job had required both arms. Other candidates were rejected for reasons that the company gave to the assessor directly
+and not through the questionnaire process. These findings will be fed back into giving the next iteration of the system more data integrity.
+
+The solution originally was written in Octave and later was ported to into MATLAB
+
+
+The answers to closed-ended questions maybe further split into five different types
+
+1.		category - represents a set of mutually exclusive categories (e.g male, female)
+
+2.		list - multiple category choice is possible as the answers are not exclusive, 
+		eg ”what services have you used from your GP in the last year?”.
+
+3.		quantity/numeric - such as ”how many times have you broken your leg?”
+
+4.		ranking/scale - such as ”how would you rate your doctor [1-7]”
+
+5.		linguistic ranking/scale - such as ”would you describe yourself as: very tall,
+		tall,short,very short?”
+
+
+
+
+
+We will add to the very sparse representation of machine learning techniques that specifically target closed-data questionnaires.
+
+The research will apply non static membership functions to the developed Association Rule Mining solution through real-time feedback of subject matter experts assessments back into the system.
+ 
+3.   We will develop a hybrid solution whereby any rule parameters that are mined will be further 					tuned through the use of gradient descent with the aim of thereby demonstrating a better 						solution.
+
+
+1. 	Medical assessments are a bottle-neck in a candidate’s selection process because of their late 				placement in any recruitment campaign. This lengthening represents a potential missed 						opportunity for the candidate of missing other company campaigns. 
+
+2.  	The added physical assessment time is also a potential missed opportunity for an employer as a 			final decision on a promising candidate may arrive too late as the candidate has already been 				picked up in an entirely different role. Indeed if this is the only chosen candidate the whole 					selection process may have to begin again.
+
+3.   The cost of physical medical assessments may also prove prohibitive to an employer.

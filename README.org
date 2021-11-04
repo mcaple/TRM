@@ -1,0 +1,11 @@
+#+title: TRM Project to develop the assets required for my Candidature Assessment
+#+description: Repository that houses mostly Latex files that are eventually transpiled into PDF or pptx format output file
+#+author: Mark Caple
+
+** Output
+
+[[https://github.com/mcaple/TRM/blob/master/Mark_Caple_CA1.pdf][Candidature assessment]]
+
+[[https://github.com/mcaple/TRM/blob/master/CA1.pptx][Powerpoint presentation]]
+
+

@@ -6,6 +6,8 @@
 
 Repository that houses mostly Latex files that are eventually transpiled into PDF or pptx format output files
 
+TDB: Latex structure should be nested into folders based on chapters of the output documents
+
 ** Output
 
 [[https://github.com/mcaple/TRM/blob/master/Mark_Caple_CA1.pdf][Candidature assessment]]
